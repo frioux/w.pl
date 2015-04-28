@@ -7,12 +7,12 @@ use experimental 'signatures';
 use autodie;
 
 use IO::Async::Timer::Periodic;
-use IO::Async::Loop;
+use IO::Async::Loop::Epoll;
 use Net::Async::HTTP;
 use URI;
 use Future::Utils 'fmap_void';
 
-my $loop = IO::Async::Loop->new;
+my $loop = IO::Async::Loop::Epoll->new;
 
 my $http = Net::Async::HTTP->new(timeout => 60);
 
