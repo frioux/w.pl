@@ -41,7 +41,7 @@ sub update_weather {
             open my $fh, '>', "/tmp/$code";
             print $fh $response->decoded_content
       })->on_fail(sub ($message, @) { warn "$code retrieval failed: $message" })
-   } foreach => \@ARGV;
+   } foreach => [@ARGV];
 
    $f->get
 }
