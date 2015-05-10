@@ -39,7 +39,8 @@ sub update_weather {
          uri => URI->new( "http://weather.noaa.gov/pub/data/observations/metar/decoded/$code.TXT" ),
       )->on_done(sub ($response) {
             open my $fh, '>', "/tmp/$code";
-            print $fh $response->decoded_content
+            print $fh $response->decoded_content;
+            close $fh;
       })->on_fail(sub ($message, @) { warn "$code retrieval failed: $message" })
    } foreach => [@ARGV];
 
