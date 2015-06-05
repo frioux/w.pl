@@ -9,4 +9,4 @@ RUN cpanm --installdeps --no-man-pages . \
  && rm -rf ~/.cpanm
 
 ENTRYPOINT ["perl", "bin/w.pl"]
-CMD ["KBIX", "KADS", "KHQZ"]
+CMD ["KBIX", "KSMO"]
