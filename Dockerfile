@@ -1,12 +1,11 @@
-FROM perl:5.20.2
+FROM alpine:3.2
 MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
 
-ADD . /opt
-WORKDIR /opt
+ADD bin/w.sh /bin/w.sh
 VOLUME /tmp
 
-RUN cpanm --installdeps --no-man-pages . \
- && rm -rf ~/.cpanm
+RUN apk add --update curl \
+ && rm -rf /var/cache/apk/*
 
-ENTRYPOINT ["perl", "bin/w.pl"]
+ENTRYPOINT ["w.sh"]
 CMD ["KBIX", "KSMO"]
