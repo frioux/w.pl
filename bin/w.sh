@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NOAA=http://weather.noaa.gov/pub/data/observations/metar/decoded
+NOAA=http://tgftp.nws.noaa.gov/data/observations/metar/decoded
 while true; do
    for code in "$@"; do
       echo checking $code
