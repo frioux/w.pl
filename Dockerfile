@@ -1,5 +1,5 @@
 FROM alpine:3.2
-MAINTAINER Arthur Axel fREW Schmidt <frioux@gmail.com>
+MAINTAINER Arthur Axel fREW Schmidt <w-pl@afoolishmanifesto.com>
 
 ADD bin/w.sh /bin/w.sh
 VOLUME /tmp
